@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Calculator</title>
+  <script>
+    function clr() {
+      var exp = document.calc.textview.value;
+        document.calc.textview.value = exp.substring(0, exp.length - 1);
+        }
+  </script>
+  <style>
+    body{
+  height: 100%;
+}
+*{
+  margin: 0%;
+}
+html{
+  height: 100%;
+} 
+body {
+  margin: 0;
+  padding: 0;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  background-image:linear-gradient(#bdc3c7,#2c3e50);
+}
+h1 {
+  text-align: center;
+  color:#FFFFFF;
+  padding-top: 10px;
+  font-size: 42px;
+  padding: 10px 20px;
+}
+.calc {
+  width: 250px;
+  height: 410px;
+  padding: 10px 20px;
+  border-radius: 55px;
+  border: 5px solid #4DA8DA;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: -100px;
+  background-color: #203647;
+}
+.screen {
+  width: 100%;
+  height: 50px;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  font-size: 20px;
+  background: none;
+  border-radius: 40px;
+  border: 5px solid #EEFBFB;
+  box-sizing: border-box;
+  color:#EEFBFB;
+}
+.bn {
+  width: 55px;
+  height: 55px;
+  margin: 2px;
+  padding: 9px;
+  background: none;
+  border-radius: 40px;
+  border: 5px solid #cbdae6c5;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  outline: none;
+  transition: 0.5s;
+  cursor: pointer;
+  background-color:#1F2833;
+}
+.bn:hover {
+  transform: scale(1.08);
+  transition: 0.1s;
+}
+h1 {
+  font-size: 50px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: oblique;
+  font-variant-alternates: historical-forms;
+}
+  </style>
+</head>
+<body>
+  <h1>|+ Calculator -|</h1>
+  <div class="calc">
+   <form name="calc">
+   <input name="textview" type="textview" class="screen" />
+   </form>
+   <table>
+    <tr>
+      <td>
+        <input type="button" class="bn" value="C" onclick="document.calc.textview.value = ''"/>
+      </td>
+      <td>
+        <input style="font-size: 18px" type="button" class="bn" value="※←" onclick="clr()"  />
+      </td>
+      <td>
+        <input type="button" class="bn" value="√" onclick="document.calc.textview.value = Math.sqrt(document.calc.textview.value)"/>
+    </td>
+      <td>
+        <input type="button" class="bn" value="/" onclick="document.calc.textview.value += '/'"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="button" class="bn" value="7" onclick="document.calc.textview.value += '7'"/>
+      </td>
+      <td>
+        <input type="button" class="bn" value="8" onclick="document.calc.textview.value += '8'"/>
+      </td>
+      <td>
+        <input type="button" class="bn" value="9" onclick="document.calc.textview.value += '9'"
+          />
+      </td>
+      <td>
+        <input type="button" class="bn" value="*" onclick="document.calc.textview.value += '*'"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="button" class="bn" value="4" onclick="document.calc.textview.value += '4'"/>
+      </td>
+      <td>
+        <input type="button" class="bn" value="5" onclick="document.calc.textview.value += '5'"/>
+      </td>
+      <td>
+        <input type="button" class="bn" value="6" onclick="document.calc.textview.value += '6'"/>
+      </td>
+      <td>
+        <input type="button" class="bn" value="-" onclick="document.calc.textview.value += '-'"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="button" class="bn" value="1" onclick="document.calc.textview.value += '1'"/>
+      </td>
+      <td>
+        <input type="button" class="bn" value="2" onclick="document.calc.textview.value += '2'"/>
+      </td>
+      <td>
+        <input type="button" class="bn" value="3" onclick="document.calc.textview.value += '3'"/>
+      </td>
+      <td rowspan="2">
+        <input style="height: 115px" type="button" class="bn" value="+" onclick="document.calc.textview.value += '+'"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="button" class="bn" value="0" onclick="document.calc.textview.value += '0'"/>
+      </td>
+      <td>
+        <input type="button"   class="bn" value="." onclick="document.calc.textview.value += '.'"/>
+      </td>
+      <td>
+        <input type="button" class="bn" value="=" onclick="document.calc.textview.value = eval(document.calc.textview.value)" />
+      </td>
+     </tr>
+    </table>
+    </div>
+  </body>
+</html>
